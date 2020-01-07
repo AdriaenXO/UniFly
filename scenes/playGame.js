@@ -27,7 +27,10 @@ class playGame extends Phaser.Scene {
         this.bird.body.gravity.y = gameOptions.birdGravity;
         this.input.on('pointerdown', this.flap, this);
 
-        this.input.keyboard.on('keydown-SPACE', this.flap, this);
+        this.input.keyboard.on('keydown-SPACE', function (event) {
+            event.preventDefault();
+            this.flap();
+        }, this);
 
         this.anims.create({
             key: 'unicorn',
