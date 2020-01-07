@@ -21,7 +21,7 @@ let gameOptions = {
     birdAngle: 30,
 
     // minimum pipe height
-    minPipeHeight: 50,
+    minPipeHeight: 150,
 
     // distance between pipes
     pipeDistance: [300, 350],
