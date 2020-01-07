@@ -8,7 +8,7 @@ let gameConfig = {
     backgroundColor: gameOptions.backgroundColor,
     scale: {
         mode: Phaser.Scale.FIT,
-        //autoCenter: Phaser.Scale.CENTER_BOTH,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
         parent: gameOptions.container,
         width: gameOptions.width,
         height: gameOptions.height

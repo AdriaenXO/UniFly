@@ -33,7 +33,10 @@ let gameOptions = {
     fontName: 'Amatic SC',
 
     // background color
-    backgroundColor: '#6dcff6'
+    backgroundColor: '#6dcff6',
+
+    // music volume
+    soundVolume: 0.2
 };
 
 export default gameOptions;

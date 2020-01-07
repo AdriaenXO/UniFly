@@ -37,7 +37,7 @@ class playGame extends Phaser.Scene {
         this.bird.play('unicorn');
 
         this.jumpSound = this.sound.add('jump');
-        this.jumpSound.volume = 0.2;
+        this.jumpSound.volume = gameOptions.soundVolume;
 
         this.score = 0;
         this.scoreText = this.add.text(10, 10, '', { fontFamily: gameOptions.fontName, fontSize: 64, color: '#ffffff' });
