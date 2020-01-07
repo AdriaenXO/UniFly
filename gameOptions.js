@@ -12,7 +12,7 @@ let gameOptions = {
     birdGravity: 800,
 
     // speed of bird
-    birdSpeed: 250,
+    birdSpeed: 200,
 
     // strength of the flap
     birdFlapPower: 400,
