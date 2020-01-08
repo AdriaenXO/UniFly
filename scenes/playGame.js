@@ -43,12 +43,22 @@ class playGame extends Phaser.Scene {
 
         this.score = 0;
         this.scoreText = this.add.text(10, 10, '', { fontFamily: gameOptions.fontName, fontSize: 64, color: '#ffffff' });
+        this.scorePopup = this.add.text(gameOptions.width / 2, gameOptions.height / 2, '0', { fontFamily: gameOptions.fontName, fontSize: 400, color: '#000000' });
         this.updateScore(this.score);
     }
     updateScore(inc) {
         this.score += inc;
         this.scoreText.text = 'Score: ' + this.score;
         this.scoreText.x = gameOptions.width * 0.5 - this.scoreText.width * 0.5;
+
+        this.scorePopup.text = this.score;
+        this.scorePopup.x = gameOptions.width * 0.5 - this.scorePopup.width * 0.5;
+        this.scorePopup.y = gameOptions.height * 0.5 - this.scorePopup.height * 0.5;
+        this.tweens.add({
+            targets: this.scorePopup,
+            alpha: { start: 1, from: 1, to: 0 },
+            repeat: 0,
+        });
     }
     placePipes(addScore) {
         let rightmost = this.getRightmostPipe();
