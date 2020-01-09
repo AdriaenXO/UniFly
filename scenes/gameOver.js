@@ -24,12 +24,24 @@ class gameOver extends Phaser.Scene {
         ohNoesText.x = gameOptions.width * 0.5 - ohNoesText.width * 0.5;
 
         let yourScoreText = this.add.text(0, 0, 'Your score:', { fontFamily: gameOptions.fontName, fontSize: 50, color: '#000000', fontStyle: 'bold'});
-        yourScoreText.x = gameOptions.width * 0.5 - yourScoreText.width * 0.5;
-        yourScoreText.y = ohNoesText.y + 100;
+        yourScoreText.x = gameOptions.width * 0.5 - yourScoreText.width * 0.5 - 100;
+        yourScoreText.y = ohNoesText.y + 125;
 
         let scoreText = this.add.text(0, 0, this.score, { fontFamily: gameOptions.fontName, fontSize: 100, color: '#ffffff', fontStyle: 'bold'});
-        scoreText.x = gameOptions.width * 0.5 - scoreText.width * 0.5;
+        scoreText.x = gameOptions.width * 0.5 - scoreText.width * 0.5 - 100;
         scoreText.y = yourScoreText.y + 50;
+
+        let bestScoreText = this.add.text(0, 0, 'Best score:', { fontFamily: gameOptions.fontName, fontSize: 50, color: '#000000', fontStyle: 'bold'});
+        bestScoreText.x = gameOptions.width * 0.5 - bestScoreText.width * 0.5 + 100;
+        bestScoreText.y = ohNoesText.y + 125;
+
+        this.topScore = localStorage.getItem(gameOptions.localStorage);
+        localStorage.setItem(gameOptions.localStorage, Math.max(this.score, this.topScore));
+        this.topScore = localStorage.getItem(gameOptions.localStorage);
+
+        let bestScoreValueText = this.add.text(0, 0, this.topScore, { fontFamily: gameOptions.fontName, fontSize: 100, color: '#ffffff', fontStyle: 'bold'});
+        bestScoreValueText.x = gameOptions.width * 0.5 - bestScoreValueText.width * 0.5 + 100;
+        bestScoreValueText.y = yourScoreText.y + 50;
 
         let startGameText = this.add.text(0, gameOptions.height * 0.7, 'Play again', { fontFamily: gameOptions.fontName, fontSize: 72, color: '#000000' , fontStyle: 'bold'});
         startGameText.setInteractive({ useHandCursor: true });

@@ -6,7 +6,7 @@ class playGame extends Phaser.Scene {
     }
     preload() {
         this.load.image('pipe', 'assets/pipe.png');
-        //this.load.image('bird', 'assets/unicorn_50.png');
+        //this.load.image('bird', 'assets/unicorn_35.png');
         this.load.spritesheet('bird', 'assets/unicorn_spritesheet.png', { frameWidth: 48, frameHeight: 28 });
         this.load.image('background_game', 'assets/background_game.png');
         this.load.audio('jump', 'assets/jump.mp3');
@@ -35,7 +35,6 @@ class playGame extends Phaser.Scene {
             frameRate: 10,
             repeat: -1
         });
-
         this.bird.play('unicorn');
 
         this.jumpSound = this.sound.add('jump');

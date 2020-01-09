@@ -36,7 +36,10 @@ let gameOptions = {
     backgroundColor: '#6dcff6',
 
     // music volume
-    soundVolume: 0.2
+    soundVolume: 0.2,
+
+    // local storage variable name
+    localStorage: 'UniFlyTopScore'
 };
 
 export default gameOptions;
