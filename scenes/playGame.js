@@ -70,6 +70,25 @@ class playGame extends Phaser.Scene {
         this.pipePool[1].x = this.pipePool[0].x;
         this.pipePool[1].y = pipeHolePosition + pipeHoleHeight / 2;
         this.pipePool[1].setOrigin(0, 0);
+        // moving pipes -- wip
+        // if (this.score > 5 && this.score % 5 === 0) {
+        //     console.log(this.pipePool);
+        //     this.tweens.add({
+        //         targets: this.pipePool[0],
+        //         y: { start: 0, from: 0, to: gameOptions.height - pipeHoleHeight },
+        //         repeat: 0,
+        //         delay: 3500,
+        //         duration: 3000
+        //     });
+        //
+        //     this.tweens.add({
+        //         targets: this.pipePool[1],
+        //         y: { start: 0 + pipeHoleHeight, from: 0 + pipeHoleHeight, to: gameOptions.height },
+        //         repeat: 0,
+        //         delay: 3500,
+        //         duration: 3000
+        //     });
+        // }
         this.pipePool = [];
         if (addScore) {
             this.updateScore(1);
