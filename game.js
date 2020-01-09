@@ -29,5 +29,9 @@ game.scene.add('playGame', new playGame());
 game.scene.add('titleScreen', new titleScreen());
 game.scene.add('gameOver', new gameOver());
 game.scene.start('titleScreen');
+
+game.global = {
+    animation: true
+};
 window.focus();
 

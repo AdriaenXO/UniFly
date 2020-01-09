@@ -6,8 +6,6 @@ class playGame extends Phaser.Scene {
     }
     preload() {
         this.load.image('pipe', 'assets/pipe.png');
-        //this.load.image('bird', 'assets/unicorn_35.png');
-        this.load.spritesheet('bird', 'assets/unicorn_spritesheet.png', { frameWidth: 48, frameHeight: 28 });
         this.load.image('background_game', 'assets/background_game.png');
         this.load.audio('jump', 'assets/jump.mp3');
     }
@@ -23,19 +21,22 @@ class playGame extends Phaser.Scene {
         }
         this.pipeGroup.setVelocityX(-gameOptions.birdSpeed);
 
-        this.bird = this.physics.add.sprite(80, gameOptions.height / 2, 'bird');
+        if (this.game.global.animation) {
+            this.bird = this.physics.add.sprite(80, gameOptions.height / 2, 'unicorn');
+            this.anims.create({
+                key: 'unicorn',
+                frames: this.anims.generateFrameNumbers('unicorn', { start: 0, end: 17 }),
+                frameRate: 10,
+                repeat: -1
+            });
+            this.bird.play('unicorn');
+        } else {
+            this.bird = this.physics.add.sprite(80, gameOptions.height / 2, 'bird');
+        }
         this.bird.body.gravity.y = gameOptions.birdGravity;
         this.input.on('pointerdown', this.flap, this);
 
         this.input.keyboard.on('keydown-SPACE', this.flap, this);
-
-        this.anims.create({
-            key: 'unicorn',
-            frames: this.anims.generateFrameNumbers('bird', { start: 0, end: 17 }),
-            frameRate: 10,
-            repeat: -1
-        });
-        this.bird.play('unicorn');
 
         this.jumpSound = this.sound.add('jump');
         this.jumpSound.volume = gameOptions.soundVolume;
