@@ -1,10 +1,12 @@
 # UniFly
  A Flappy Birds clone made with Phaser 3
  
+<img src="https://github.com/AdriaenXO/UniFly/blob/master/Screenshot.png" height="300" alt="Screenshot" />
+ 
  A live version can be viewed [here](https://adriaenxo.github.io/UniFly/).
  
  ## 1. Goal
-The goal of this project is to make a web game, similar to Flappy Birds. Project is going to be developed in Phaser v3.21.0.
+The goal of this project is to make a web game, similar to Flappy Birds. Project is developed in Phaser v3.21.0.
 
 ## 2. Elements
 ### a. Must-haves
